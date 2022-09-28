@@ -1,38 +1,47 @@
+#include <assert.h>
+#include <malloc.h>
 #include <stdio.h>
-#include<malloc.h>
-#include "circle.h"
-#include"jollyjumper.h"
 
-void printCircle(circle c) {
-	printf("p.x: %d, p.y: %d, r: %d\n", c.p.x, c.p.y, c.r);
-}
+#include "circle.h"
+#include "jollyjumper.h"
 
 int main(void) {
-	/*testing circles - make sure that you know how it works and what it is supposed to print out*/
-	circle c[5];
-	fiveCircles(c);
-	for (int i = 0; i < 5; i++) {
-		printCircle(c[i]);
-	}
-	point p;
-	p.x = 2;
-	p.y = 2;
-	translate(&c[1], &p);
-	printCircle(c[1]);
-	printf("isValid: %d", circleIsValid(&c[1]));
+  /*testing circles - make sure that you know how it works and what it is
+   * supposed to print out*/
 
-	/*answer to exercise 7.b*/
-	int n; /*number of numbers to read*/
-	/*readin n and check that is is OK*/
+  /*
+  circle c[5];
+  fiveCircles(c);
+  for (int i = 0; i < 5; i++) {
+    printCircle(c[i]);
+  }
+  point p;
+  p.x = 2;
+  p.y = 2;
 
-	int *numbers = malloc(sizeof(int) * n); /*the numbers read*/
+  translate(&c[1], &p);
+  printf("You are here \n");
+  printCircle(c[1]);
+  printf("isValid: %d \n", circleIsValid(&c[1]));
+  */
 
-	/*readin the n numbers in the array numbers*/
+  /*answer to exercise 7.b*/
+  int n; /*number of numbers to read*/
+  /*readin n and check that is is OK*/
+  scanf("%d", &n);
+  assert(n > 0);
 
-	if (isJollyJumber(numbers, n)) {
-		printf("it is a Jolly Jumper");}
-	else {
-		printf("not a Jolly Jumper");}
-	return 0;
+  int *numbers = malloc(sizeof(int) * n); /*the numbers read*/
 
+  /*readin the n numbers in the array numbers*/
+  for (int i = 0; i < n; i++) {
+    scanf("%d", &numbers[i]);
+  }
+
+  if (isJollyJumber(numbers, n)) {
+    printf("Jolly");
+  } else {
+    printf("not Jolly");
+  }
+  return 0;
 }
