@@ -1,3 +1,4 @@
+// BY: Mathias Jørgensen: Main for assignment 5
 #include <assert.h>
 #include <malloc.h>
 #include <stdio.h>
