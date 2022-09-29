@@ -1,6 +1,7 @@
 #include "circle.h"
 
 #include <malloc.h>
+#include <stdbool.h>
 
 void fiveCircles(circle c[]) {
   /*post: returns an array with five circles - solution to 6.b*/
@@ -12,12 +13,12 @@ void fiveCircles(circle c[]) {
   return;
 }
 
-int circleIsValid(const circle* c) {
+bool circleIsValid(const circle* c) {
   /*post: answer to exercise 6.c*/
   if (c->r > 0) {
-    return 1;
+    return true;
   } else {
-    return 0;
+    return false;
   }
 }
 

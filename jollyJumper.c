@@ -3,7 +3,7 @@
 #include <malloc.h>
 #include <stdbool.h>
 
-int isJollyJumber(const int seq[], int size) {
+bool isJollyJumber(const int seq[], int size) {
   // array with the differences
   int diffs[size - 1];
   // iterate for every difference and calculate the difference

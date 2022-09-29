@@ -2,4 +2,6 @@
 #include <malloc.h>
 #include <stdbool.h>
 
-int isJollyJumber(const int seq[], int size) {}
+#include "jollyJumper.c"
+
+bool isJollyJumber(const int seq[], int size);
