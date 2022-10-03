@@ -30,9 +30,9 @@ bool isJollyJumber(const int seq[], int size) {
   // And no doublicates
   for (int i = 0; i < size - 1; i++) {
     int diff = diffs[i];
-    if (diffs_found[diff] == false) {
+    if (diff > 0 && diffs_found[diff] == false && diff < size + 1) {
       diffs_found[diff] = true;
-    } else if (diffs_found[diff] == true) {
+    } else {
       return 0;
     }
   }
